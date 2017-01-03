@@ -12,8 +12,8 @@ module.exports = {
     entry: {
         main: './app/main.js',
         main1: './app/main1.js',
-        chunk: [ "./app/chunk1", "./app/chunk2"],
-        vendor: ['jquery'],
+        // chunk: [ "./app/chunk1", "./app/chunk2"],
+        // vendor: ['jquery'],
     },
     output: {
         path: PATHS.build,
@@ -28,8 +28,9 @@ module.exports = {
             jQuery: "jquery"
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: ["vendor", "chunk"],
+            // name: ["vendor", "chunk"],
             // filename: "chunk.js"
+            name: "jquery",
             minChunk: 2,
         })
     ]
